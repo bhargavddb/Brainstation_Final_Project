@@ -1,0 +1,34 @@
+import streamlit as st
+
+# Display the image with Streamlit to ensure it's loading properly
+st.image('landing_page.jpg', use_column_width=True)  # Check if image is loading
+
+# Custom CSS to set the background image
+st.markdown(
+    """
+    <style>
+        [data-testid="stAppViewContainer"] {
+            background-image: url('landing_page.jpg');  /* Relative path */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;  /* Full screen height */
+        }
+        .stApp {
+            background-color: rgba(0, 0, 0, 0.5);  /* Optional: overlay for better contrast */
+        }
+    </style>
+    """, unsafe_allow_html=True
+)
+
+# Streamlit app content
+st.title("Login Page")
+
+username = st.text_input("Username")
+password = st.text_input("Password", type="password")
+
+if st.button("Login"):
+    if username == "admin" and password == "admin":
+        st.success("Login successful!")
+    else:
+        st.error("Invalid credentials")

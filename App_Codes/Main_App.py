@@ -19,9 +19,9 @@ USER_CREDENTIALS = {
 #  Cleaned Dataset Load
 @st.cache_data
 def load_data():
-    os.path.join(BASE_DIR,"census_modified.csv")
+
     file_path = 'census_modified.csv'
-    data = pd.read_csv(file_path)
+    data = pd.read_csv(os.path.join(BASE_DIR,"census_modified.csv"))
     return data.drop(columns=['Unnamed: 0'])
 
 # Training the model

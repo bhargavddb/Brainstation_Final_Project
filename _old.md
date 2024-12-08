@@ -1,22 +1,6 @@
 
 # Financial Product Recommendation
 
-## Table of Contents
-1. [Project Overview](#project-overview)
-2. [Repository Structure](#repository-structure)
-   - [Part 1: LOAD | CLEAN | TRANSFORM](#1-part-1-load--clean--transform)
-   - [Part 2: EDA (Exploratory Data Analysis)](#2-part-2-eda-exploratory-data-analysis)
-   - [Part 3: PREPROCESSING | ML TEST](#3-part-3-preprocessing--ml-test)
-3. [Project Workflow](#project-workflow)
-4. [Installation and Dependencies](#installation-and-dependencies)
-5. [How to Use](#how-to-use)
-6. [Dataset](#dataset)
-7. [Data Source](#data-source)
-8. [Results and Discussion](#results-and-discussion)
-   - [Key Findings](#key-findings)
-9. [Final Product app (   Secure Financial Recommendation System - Patron )](#final_app)
-
-
 ## Project Overview
 
 This project aims to build a machine learning model that predicts an individual's income bracket based on demographic and employment-related features such as age, work class, education, and hours worked per week. The income brackets are divided into two categories: `<= 50K` and `> 50K`. The ultimate goal of this prediction is to recommend suitable financial products to individuals, such as stocks, credit cards, or loan offers based on their income group.
@@ -219,96 +203,11 @@ The project implemented several machine learning models, including:
 - **Work Hours**: As expected, individuals working more hours per week had a higher likelihood of being in the `> 50K` category.
 - **Capital Gains**: Individuals with substantial capital gains were more likely to be in the `> 50K` income group.
 
-## Final Product app (   Secure Financial Recommendation System - Patron )
+## Next Steps
 
-## Overview
-The **Secure Financial Recommendation System - Patron** is a Streamlit-based application designed to recommend financial products to users based on their demographic data and predicted income category. This tool uses machine learning models and clustering techniques to provide tailored recommendations.
-
-## Features
-1. **Login System**: Secure user authentication with predefined credentials.
-2. **Machine Learning Integration**: Logistic Regression and KMeans Clustering for predictions and insights.
-3. **Financial Recommendations**: Tailored product suggestions, including credit cards, loans, savings plans, and investments.
-4. **Interactive UI**: User-friendly input via the Streamlit sidebar.
-5. **Dynamic Background and Styling**: Customizable landing page and main app view.
-
-## Technologies Used
-- Python
-- Streamlit
-- Pandas
-- Scikit-learn
-- KMeans Clustering
-- Logistic Regression
-- Base64 Encoding (for images)
-
-## Installation
-
-### Prerequisites
-- Python 3.8 or higher
-
-### Setup
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/bhargavddb/Brainstation_Final_Project.git
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd financial-recommendation-system
-   ```
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-## Usage
-1. Start the application:
-   ```bash
-   streamlit run Main_App.py
-   ```
-2. Open the web app in your browser at `http://localhost:8501`.
-3. Login using the following credentials:
-   - Username: `admin`
-   - Password: `password123`
-
-4. Enter your details in the sidebar to get financial product recommendations.
-
-## Key Functionalities
-### Data Loading
-- Reads a preprocessed dataset (`census_modified.csv`) and prepares it for predictions.
-
-### Model Training
-- Logistic Regression for income prediction.
-- KMeans Clustering to segment users into distinct clusters.
-
-### Financial Product Mapping
-Recommends financial products based on:
-- Predicted income category (`<=50K` or `>50K`).
-- Assigned cluster.
-
-### Cluster Descriptions
-Each cluster is associated with specific demographics and financial needs:
-- **Cluster 0**: Entry-level professionals, basic savings needs.
-- **Cluster 1**: Mid-level professionals, stable income.
-- **Cluster 2**: Individuals needing credit repair.
-- **Cluster 3**: High-income professionals focusing on investments.
-- **Cluster 4**: Wealthy individuals investing in cryptocurrency.
-- **Cluster 5**: Low-income earners preferring savings plans.
-
-## Future Improvements
-1. **Enhanced Security**: Use a database for user authentication.
-2. **Additional Models**: Incorporate advanced models like XGBoost for better predictions.
-3. **Dynamic Dataset**: Allow users to upload custom datasets.
-4. **Real-Time Predictions**: Enable live updates for input changes.
-
-## Screenshots
-1. **Landing Page**: Custom background image with a login interface.
-2. **Main App**: Sidebar for input and interactive result display.
-
-## License
-This project is licensed under the MIT License.
-
-
-
-
-
-
+While the models provide reasonable accuracy, there are several ways to improve the project:
+1. **Model Improvement**: Implement more advanced models like XGBOost,Random Forest or Gradient Boosting.
+2. **Hyperparameter Tuning**: Fine-tune the models' hyperparameters using Grid Search or Random Search to improve performance.
+3. **Feature Selection**: Perform feature selection or dimensionality reduction to reduce model complexity and prevent overfitting.
+4. **Business Application**: Integrate the predictive model into a larger system that recommends financial products based on an individual’s predicted income bracket.
 

@@ -3,5 +3,5 @@ pandas
 numpy
 matplotlib
 streamlit
-scikit-learn
+scikit
 base64

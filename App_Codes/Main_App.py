@@ -294,7 +294,7 @@ user_input_df = pd.DataFrame([user_input])
 if st.button("Predict"):
     # Predict income
     income_prediction = model.predict(user_input_df)[0]
-    income_result = ">50K" if income_prediction == 1 else "<=50K"
+    income_result = ">80K" if income_prediction == 1 else "<=80K"
 
     # Predict cluster
     user_input_preprocessed = preprocessor.transform(user_input_df)

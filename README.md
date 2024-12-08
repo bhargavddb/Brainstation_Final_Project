@@ -223,9 +223,9 @@ The project implemented several machine learning models, including:
 
 ## Overview
 The **Secure Financial Recommendation System - Patron** is a Streamlit-based application designed to recommend financial products to users based on their demographic data and predicted income category. This tool uses machine learning models and clustering techniques to provide tailored recommendations.
- link :- https://patron-bd.streamlit.app/
- username : guest
- password : guest
+-link :- https://patron-bd.streamlit.app/
+-username : guest
+-password : guest
 
 ## Features
 1. **Login System**: Secure user authentication with predefined credentials.

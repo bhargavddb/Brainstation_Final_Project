@@ -2,7 +2,6 @@ streamlit
 pandas
 numpy
 matplotlib
-
-streamlit 
-sklearn
+streamlit
+scikit-learn
 base64

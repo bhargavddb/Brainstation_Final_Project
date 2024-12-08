@@ -9,7 +9,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.cluster import KMeans
 import base64
 from sklearn.linear_model import LogisticRegression
-
+import os
 # Login Credits
 USER_CREDENTIALS = {
     "admin": "password123",
@@ -97,9 +97,9 @@ def encode_image_to_base64(file_path):
     with open(file_path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-
-encoded_image_landing = encode_image_to_base64("Images/landing_page.jpg")
+encoded_image_landing = encode_image_to_base64(  BASE_DIR +"/Images/landing_page.jpg")
 encoded_image_main = encode_image_to_base64("Images/Main_page_landing_2.jpg")
 
 # Load and preprocess data

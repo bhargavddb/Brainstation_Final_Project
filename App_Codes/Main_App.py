@@ -19,6 +19,7 @@ USER_CREDENTIALS = {
 #  Cleaned Dataset Load
 @st.cache_data
 def load_data():
+    os.path.join(BASE_DIR,"census_modified.csv")
     file_path = 'census_modified.csv'
     data = pd.read_csv(file_path)
     return data.drop(columns=['Unnamed: 0'])

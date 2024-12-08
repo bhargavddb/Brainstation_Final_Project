@@ -61,7 +61,7 @@ def perform_clustering(data, _preprocessor):
     return kmeans, clusters
 
 # Recommendation Function
-def map_financial_products(cluster, income):
+def map_financial_products_local(cluster, income):
     if income == 1:  # Income >50K
         if cluster in [0, 1]:
             return "Premium Credit Cards", "./Images/credit_card.jpg.png", "https://card.americanexpress.com/d/platinum-card/?utm_mcid=&utm_source=google&utm_medium=cpc&utm_term=%2Bamex%20%2Bplatinum%20%2Boffer&utm_cmpid=18510627008&utm_adgid=145040663274&utm_tgtid=aud-279874126270:kwd-1810812030648&utm_mt=p&utm_adid=719450130239&utm_dvc=c&utm_ntwk=g&utm_adpos=&utm_plcmnt=&utm_locphysid=1021041&utm_locintid=&utm_feeditemid=&utm_devicemdl=&utm_plcmnttgt=&utm_programname=brandcps&utm_cmp=PlatinumBenefit&utm_sl=&gclid=EAIaIQobChMIjueTk4KWigMVdUlHAR28uQHrEAAYASAAEgKSPvD_BwE"
@@ -80,6 +80,54 @@ def map_financial_products(cluster, income):
             return "Personal Loans", "./Images/personal_loan.png", "https://www.sofi.com/personal-loan-dr-1/?campaign=MRKT_SEM_LND_PL_NONBRA_ACQ_EXT_MBW_tCPA_QUST_20201221_HIGH-EFFICIENCY_PSE_GOG_NONE_US_EN_SFka3danansp2392h6hanc_e_g_c_599945728722_personal%20loans&utm_source=MRKT_ADWORDS&utm_medium=SEM&utm_campaign=MRKT_SEM_LND_PL_NONBRA_ACQ_EXT_MBW_tCPA_QUST_20201221_HIGH-EFFICIENCY_PSE_GOG_NONE_US_EN_SFka3danansp2392h6hanc_e_g_c_599945728722_personal%20loans&cl_vend=google&cl_ch=sem&cl_camp=11896099122&cl_adg=112338067381&cl_crtv=599945728722&cl_kw=personal%20loans&cl_pub=google.com&cl_place=&cl_dvt=c&cl_pos=&cl_mt=e&cl_gtid=aud-693343449970%3Akwd-10131831&opti_ca=11896099122&opti_ag=112338067381&opti_ad=599945728722&opti_key=aud-693343449970%3Akwd-10131831&gclid=EAIaIQobChMIzZ_WxoKWigMVFGNHAR0ijiEZEAAYAiAAEgJLMvD_BwE&gclsrc=aw.ds&gad_source=1&ds_agid=58700006592097569&ds_cid=71700000078164822&ds_eid=700000001842560&ds_kid=43700072219871989"
         else:
             return "Savings Plans", "./Images/saving.jpg", "https://www.banking.barclaysus.com/tiered-savings.html?cjdata=MXxOfDB8WXww&AID=15161582&PID=100333868&SID=8S9FUjMs0t&cjevent=9297d89db46a11ef823f04c50a82b838&refid=CJNNIRTTIER"
+
+
+def map_financial_products(cluster, income):
+    if income == 1:  # Income >50K
+        if cluster in [0, 1]:
+            return (
+                "Premium Credit Cards",
+                os.path.join(BASE_DIR, "Images", "credit_card.jpg.png"),
+                "https://card.americanexpress.com/d/platinum-card/?utm_mcid=&utm_source=google&utm_medium=cpc&utm_term=%2Bamex%20%2Bplatinum%20%2Boffer&utm_cmpid=18510627008&utm_adgid=145040663274&utm_tgtid=aud-279874126270:kwd-1810812030648&utm_mt=p&utm_adid=719450130239&utm_dvc=c&utm_ntwk=g&utm_adpos=&utm_plcmnt=&utm_locphysid=1021041&utm_locintid=&utm_feeditemid=&utm_devicemdl=&utm_plcmnttgt=&utm_programname=brandcps&utm_cmp=PlatinumBenefit&utm_sl=&gclid=EAIaIQobChMIjueTk4KWigMVdUlHAR28uQHrEAAYASAAEgKSPvD_BwE"
+            )
+        elif cluster in [2, 3]:
+            return (
+                "Investment in S&P Index & ETFs",
+                os.path.join(BASE_DIR, "Images", "etfs.jpg"),
+                "https://robinhood.com/us/en/stocks/SPY/"
+            )
+        elif cluster in [4]:
+            return (
+                "Investment in Bitcoin/ Other Crypto",
+                os.path.join(BASE_DIR, "Images", "bitcoin.jpg.tiff"),
+                "https://www.coinbase.com/price/bitcoin"
+            )
+        else:
+            return (
+                "Home Loans",
+                os.path.join(BASE_DIR, "Images", "loan.jpg"),
+                "https://www.example.com/home-loans"
+            )
+    else:  # Income <=50K
+        if cluster in [0, 1]:
+            return (
+                "Basic Credit Cards",
+                os.path.join(BASE_DIR, "Images", "basic_credit_card.jpg"),
+                "https://www.discover.com/products/student-it.html?sc=RJQS&iq_id=r43700078743852575&cmpgnid=ps-dca-google-sitelink&iq_id=r43700078743852575&cmpgnid=ps-dca-google-brand-credit-card&source=PSGOOGLE&gad_source=1&gclid=EAIaIQobChMIrI2Ho5CVigMVkWFHAR14_BSTEAAYASABEgL_ZvD_BwE&gclsrc=aw.ds"
+            )
+        elif cluster in [2, 3]:
+            return (
+                "Personal Loans",
+                os.path.join(BASE_DIR, "Images", "personal_loan.png"),
+                "https://www.sofi.com/personal-loan-dr-1/?campaign=MRKT_SEM_LND_PL_NONBRA_ACQ_EXT_MBW_tCPA_QUST_20201221_HIGH-EFFICIENCY_PSE_GOG_NONE_US_EN_SFka3danansp2392h6hanc_e_g_c_599945728722_personal%20loans&utm_source=MRKT_ADWORDS&utm_medium=SEM&utm_campaign=MRKT_SEM_LND_PL_NONBRA_ACQ_EXT_MBW_tCPA_QUST_20201221_HIGH-EFFICIENCY_PSE_GOG_NONE_US_EN_SFka3danansp2392h6hanc_e_g_c_599945728722_personal%20loans&cl_vend=google&cl_ch=sem&cl_camp=11896099122&cl_adg=112338067381&cl_crtv=599945728722&cl_kw=personal%20loans&cl_pub=google.com&cl_place=&cl_dvt=c&cl_pos=&cl_mt=e&cl_gtid=aud-693343449970%3Akwd-10131831&opti_ca=11896099122&opti_ag=112338067381&opti_ad=599945728722&opti_key=aud-693343449970%3Akwd-10131831&gclid=EAIaIQobChMIzZ_WxoKWigMVFGNHAR0ijiEZEAAYAiAAEgJLMvD_BwE&gclsrc=aw.ds&gad_source=1&ds_agid=58700006592097569&ds_cid=71700000078164822&ds_eid=700000001842560&ds_kid=43700072219871989"
+            )
+        else:
+            return (
+                "Savings Plans",
+                os.path.join(BASE_DIR, "Images", "saving.jpg"),
+                "https://www.banking.barclaysus.com/tiered-savings.html?cjdata=MXxOfDB8WXww&AID=15161582&PID=100333868&SID=8S9FUjMs0t&cjevent=9297d89db46a11ef823f04c50a82b838&refid=CJNNIRTTIER"
+            )
+
 
 # Cluster descriptions
 def get_cluster_description(cluster_number):

@@ -20,8 +20,8 @@ USER_CREDENTIALS = {
 @st.cache_data
 def load_data():
 
-    file_path = 'census_modified.csv'
-    data = pd.read_csv(os.path.join(BASE_DIR,"census_modified.csv"))
+    file_path = 'census_modified_v2.xlsx'
+    data = pd.read_excel(os.path.join(BASE_DIR,"census_modified_v2.xlsx"))
     return data.drop(columns=['Unnamed: 0'])
 
 # Training the model

@@ -100,7 +100,7 @@ def encode_image_to_base64(file_path):
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 encoded_image_landing = encode_image_to_base64(  BASE_DIR +"/Images/landing_page.jpg")
-encoded_image_main = encode_image_to_base64("Images/Main_page_landing_2.jpg")
+encoded_image_main = encode_image_to_base64( BASE_DIR + "Images/Main_page_landing_2.jpg")
 
 # Load and preprocess data
 data = load_data()

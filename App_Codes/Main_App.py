@@ -13,7 +13,8 @@ import os
 # Login Credits
 USER_CREDENTIALS = {
     "admin": "password123",
-    "BHARGAV": "BHARGAV"
+    "BHARGAV": "BHARGAV",
+    "guest": "guest"
 }
 
 #  Cleaned Dataset Load

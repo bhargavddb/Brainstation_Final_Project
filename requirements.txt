@@ -4,4 +4,4 @@ numpy
 matplotlib
 streamlit
 scikit-learn
-
+openpyxl
